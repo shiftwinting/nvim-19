@@ -49,7 +49,7 @@ syntax enable
 colorscheme material
 
 " Automatically enable spell check in the given file types
-autocmd FileType latex,tex,md,markdown setlocal spell
+" autocmd FileType latex,tex,md,markdown setlocal spell
 " Automatically compile markdown files
 autocmd BufWritePost *.md silent execute "!pandoc % -o %:r.pdf"
 command PandocPDF silent execute "!pandoc % -o %:r.pdf"
