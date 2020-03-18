@@ -18,6 +18,10 @@ set shiftwidth=4
 set autoindent
 set smartindent
 
+" Language
+set spelllang=sv "det verkar inte som detta vill funka
+"set nospell "stänger av all språkkorrigering
+
 " Always utf8
 set termencoding=utf-8
 " set encoding=utf-8
