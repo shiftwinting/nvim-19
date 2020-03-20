@@ -7,8 +7,6 @@ syntax on
 
 highlight LineNr term=bold cterm=NONE ctermfg=Grey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 
-let mapleader = ","
-
 " tab stuff
 set tabstop=4
 set softtabstop=4
