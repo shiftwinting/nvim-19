@@ -48,7 +48,10 @@ endif
 
 " Theme
 syntax enable
-colorscheme material
+colorscheme material "material OceanicNext shades_of_purple
+
+" Statusbar Themes
+
 
 " Automatically enable spell check in the given file types
 " autocmd FileType latex,tex,md,markdown setlocal spell
