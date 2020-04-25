@@ -30,10 +30,6 @@ call plug#begin()
     Plug 'Rigellute/shades-of-purple.vim'
     Plug 'kaicataldo/material.vim'
 
-" Statusbar
-    Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themevim-airline/vim-airlines'
-
 " Fuzzy Search
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
     Plug 'junegunn/fzf.vim'
@@ -42,6 +38,8 @@ call plug#begin()
     Plug 'junegunn/goyo.vim'
     Plug 'junegunn/limelight.vim' "focuses on the current paragraph
 
+" Css
+    Plug 'ap/vim-css-color'
   
 " Git support
     Plug 'tpope/vim-fugitive'
