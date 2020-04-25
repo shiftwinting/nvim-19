@@ -39,7 +39,7 @@ call plug#begin()
     Plug 'junegunn/limelight.vim' "focuses on the current paragraph
 
 " Css
-    Plug 'ap/vim-css-color'
+    "Plug 'ap/vim-css-color'
   
 " Git support
     Plug 'tpope/vim-fugitive'
