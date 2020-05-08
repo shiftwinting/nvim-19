@@ -13,6 +13,5 @@ nmap <F7> i \documentclass{article}<CR>\usepackage[utf8]{inputenc}<CR><CR>\title
 
 map <F9> :Goyo <bar> :Limelight <CR>
 
-map <SPACE> <leader>
-
+map <leader>in :IndentLinesToggle <CR>
 

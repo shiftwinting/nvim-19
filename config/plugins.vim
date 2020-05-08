@@ -43,4 +43,10 @@ call plug#begin()
   
 " Git support
     Plug 'tpope/vim-fugitive'
+
+
+" Indentation guides
+    Plug 'yggdroot/indentline'
+    let g:indentLine_char_list = ['|']
+    let g:indentLine_enabled = 0
     call plug#end()
