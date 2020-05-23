@@ -38,9 +38,9 @@ Plug 'sirver/ultisnips'
 let g:UltiSnipsExpandTrigger = '<tab>'
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
-let g:UltiSnipsSnippetsDir = "/home/chris/.config/nvim/UltiSnips"
+let g:UltiSnipsSnippetsDir = "/home/chris/.config/nvim/UltiSnips"                       "have to include the whole directory for it to work with neovim
 
-let g:UltiSnipsSnippetDirectories=["UltiSnips", "/home/chris.config/nvim/Ultisnips"]
+let g:UltiSnipsSnippetDirectories=["UltiSnips", "/home/chris.config/nvim/Ultisnips"]    "have to include the whole directory for it to work with neovim
 
 "Plugins for training up my vimspeed
 Plug 'ThePrimeagen/vim-be-good'         "to use, enter command VimBeGood
