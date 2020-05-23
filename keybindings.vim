@@ -24,4 +24,10 @@ nnoremap <M-k>    :resize +2<CR>
 nnoremap <M-h>    :vertical resize -2<CR>
 nnoremap <M-l>    :vertical resize +2<CR>
 
+" Vim games for improving vim speed
 nnoremap <leader>vbg ggVGd:VimBeGood <CR>
+
+"Vim-fugitive gitwraper bindings
+nnoremap <leader>gs :G<CR>
+
+
