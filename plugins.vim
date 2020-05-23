@@ -45,6 +45,9 @@ let g:UltiSnipsSnippetDirectories=["UltiSnips", "/home/chris.config/nvim/Ultisni
 "Plugins for training up my vimspeed
 Plug 'ThePrimeagen/vim-be-good'         "to use, enter command VimBeGood
 
+"Git integration
+Plug 'tpope/vim-fugitive'
+
 call plug#end()
 filetype plugin on
 
