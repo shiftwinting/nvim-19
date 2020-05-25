@@ -48,6 +48,9 @@ Plug 'ThePrimeagen/vim-be-good'         "to use, enter command VimBeGood
 "Git integration
 Plug 'tpope/vim-fugitive'
 
+"View hexholors, rgb colors etc. in real time
+Plug 'norcalli/nvim-colorizer.lua'
+
 call plug#end()
 filetype plugin on
 

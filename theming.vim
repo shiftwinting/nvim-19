@@ -6,3 +6,7 @@ let g:airline_theme='luna'          "Theme for airline bar
 syntax enable
 
 "hi Conceal ctermbg=234
+
+if (has("termguicolors"))
+    set termguicolors
+endif
