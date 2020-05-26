@@ -1,6 +1,6 @@
-" Defining leader key
-"let mapleader = "<space>" 
-"nnoremap <special> <space> <Nop>
+"Leader key is defined in general.vim for because of how vim loads settings
+"and plugins
+
 
 " For inserting a default latex environment. Not needen when using the superior ultisnips plugin
 " nmap <F7> i\documentclass{article}<CR>\usepackage[utf8]{inputenc}<CR><CR>\title{Titel}<CR>\author{Christoffer Fjälborg Rinaldo}<CR>\date{<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR>}<CR><CR>\begin{document}<CR><CR>\maketitle<CR><CR>\section{First section}<CR><CR>\end{document}<Esc>

@@ -1,3 +1,12 @@
+" auto-install vim-plug
+if empty(glob('~/.config/nvim/autoload/plug.vim'))
+  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  "autocmd VimEnter * PlugInstall
+  "autocmd VimEnter * PlugInstall | source $MYVIMRC
+endif
+
+
 call plug#begin('~/.config/nvim/plugged')
 
 "Plug 'sheerun/vim-polyglot' 		    "Language pack for syntax highlighting
@@ -20,12 +29,14 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'			            "Fyzzy finder
 
 
-" THEMING
+" THEMING AND APPERANCE
 Plug 'arcticicestudio/nord-vim'		    "Nord theme
 Plug 'vim-airline/vim-airline'		    "changes the menubar and adds the possibility of more features 
 Plug 'vim-airline/vim-airline-themes'	"themes for the airline menubar
 Plug 'dylanaraps/wal'                   "Pulls the theme data of the wal program and applies it to vim
 Plug 'morhetz/gruvbox'                  "Gruvbox theme, might work better than wal theme
+"View hexholors, rgb colors etc. in real time
+Plug 'norcalli/nvim-colorizer.lua'
 
 
 " FOR WRITING
@@ -42,14 +53,18 @@ let g:UltiSnipsSnippetsDir = "/home/chris/.config/nvim/UltiSnips"               
 
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "/home/chris.config/nvim/Ultisnips"]    "have to include the whole directory for it to work with neovim
 
+"MOVEMENT
+Plug 'justinmk/vim-sneak'               "Using this for its vertikal movements
+Plug 'unblevable/quick-scope'           "using this for its horisontal movements
+
+
 "Plugins for training up my vimspeed
 Plug 'ThePrimeagen/vim-be-good'         "to use, enter command VimBeGood
 
 "Git integration
 Plug 'tpope/vim-fugitive'
 
-"View hexholors, rgb colors etc. in real time
-Plug 'norcalli/nvim-colorizer.lua'
+
 
 call plug#end()
 filetype plugin on

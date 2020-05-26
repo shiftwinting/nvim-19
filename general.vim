@@ -1,3 +1,7 @@
+" Defining leader key
+let g:mapleader = "\<Space>"
+
+
 set number relativenumber	"Numbering
 
 set nocompatible
@@ -12,7 +16,9 @@ set smartindent
 set expandtab
 set smarttab
 
-" set cursorline
+"setting splitbehaviour
+set splitbelow
+set splitright
 
 " TEXT EDITING
 autocmd BufWritePost *.md silent execute "!pandoc % -o %:r.pdf"
