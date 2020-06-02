@@ -35,10 +35,8 @@ Plug 'vim-airline/vim-airline'		    "changes the menubar and adds the possibilit
 Plug 'vim-airline/vim-airline-themes'	"themes for the airline menubar
 Plug 'dylanaraps/wal'                   "Pulls the theme data of the wal program and applies it to vim
 Plug 'morhetz/gruvbox'                  "Gruvbox theme, might work better than wal theme
-"View hexholors, rgb colors etc. in real time
-Plug 'norcalli/nvim-colorizer.lua'
-" Gives vim a startscreen to quickly navigate to recently used files and such
-Plug 'mhinz/vim-startify'
+Plug 'norcalli/nvim-colorizer.lua'      "View hexholors, rgb colors etc. in real time
+Plug 'mhinz/vim-startify'               " Gives vim a startscreen to quickly navigate to recently used files and such
 
 
 " FOR WRITING
@@ -52,7 +50,6 @@ let g:UltiSnipsExpandTrigger = '<tab>'
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 let g:UltiSnipsSnippetsDir = "/home/chris/.config/nvim/UltiSnips"                       "have to include the whole directory for it to work with neovim
-
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "/home/chris.config/nvim/Ultisnips"]    "have to include the whole directory for it to work with neovim
 
 "MOVEMENT
