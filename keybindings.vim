@@ -9,8 +9,11 @@
 nnoremap <F9> :Goyo <bar> setlocal spell! <bar> setlocal wrap linebreak<CR>
 
 " Makes jk or kj behave like escape
-inoremap jk <Esc>
-inoremap kj <Esc>
+"inoremap jk <Esc>
+"inoremap kj <Esc>
+
+"Makes ii behave like escape
+inoremap ii <Esc>
 
 " Better window navigation
 nnoremap <C-h> <C-w>h
