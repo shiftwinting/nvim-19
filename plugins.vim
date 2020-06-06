@@ -27,6 +27,7 @@ let g:vimtex_compiler_latexmk = {
 Plug 'preservim/nerdtree'		        "File navigation
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'			            "Fyzzy finder
+Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
 
 
 " THEMING AND APPERANCE

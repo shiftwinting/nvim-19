@@ -7,6 +7,7 @@ source ~/.config/nvim/plugins.vim
 source ~/.config/nvim/plug-configs/sneak.vim
 source ~/.config/nvim/plug-configs/quickscope.vim
 source ~/.config/nvim/plug-configs/start-screen.vim
+source ~/.config/nvim/plug-configs/rnvimr.vim
 
 source ~/.config/nvim/theming.vim
 source ~/.config/nvim/keybindings.vim
