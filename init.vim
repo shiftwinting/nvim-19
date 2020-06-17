@@ -9,6 +9,10 @@ source ~/.config/nvim/plug-configs/quickscope.vim
 source ~/.config/nvim/plug-configs/start-screen.vim
 source ~/.config/nvim/plug-configs/rnvimr.vim
 
+"my own vimscripts
+source ~/.config/nvim/writingmode.vim
+
+" 
 source ~/.config/nvim/theming.vim
 source ~/.config/nvim/keybindings.vim
 

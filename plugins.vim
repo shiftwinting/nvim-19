@@ -59,7 +59,7 @@ Plug 'unblevable/quick-scope'           "using this for its horisontal movements
 
 
 "Plugins for training up my vimspeed
-Plug 'ThePrimeagen/vim-be-good'         "to use, enter command VimBeGood
+Plug 'ThePrimeagen/vim-be-good', {'do': './install.sh' }         "to use, enter command VimBeGood
 
 "Git integration
 Plug 'tpope/vim-fugitive'
