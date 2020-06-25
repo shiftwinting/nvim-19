@@ -6,7 +6,7 @@
 " nmap <F7> i\documentclass{article}<CR>\usepackage[utf8]{inputenc}<CR><CR>\title{Titel}<CR>\author{Christoffer Fjälborg Rinaldo}<CR>\date{<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR>}<CR><CR>\begin{document}<CR><CR>\maketitle<CR><CR>\section{First section}<CR><CR>\end{document}<Esc>
 
 "for entering "writing mode"
-nnoremap <F9> :Goyo <bar> setlocal spell! <bar> setlocal wrap linebreak<CR>
+"nnoremap <F9> :Goyo <bar> setlocal spell! <bar> setlocal wrap linebreak<CR>
 
 " Makes jk or kj behave like escape
 "inoremap jk <Esc>
