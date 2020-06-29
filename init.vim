@@ -1,4 +1,9 @@
+" ---------------------------------------------------
+" My init.vim file! 
+" ---------------------------------------------------
 
+" Place the cursor on path of a file and press gf (Go to File) to jump to the
+" file. Press Ctrl o to jump back
 
 source ~/.config/nvim/general.vim
 source ~/.config/nvim/plugins.vim
