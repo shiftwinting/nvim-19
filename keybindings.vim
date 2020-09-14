@@ -13,7 +13,7 @@
 "inoremap kj <Esc>
 
 "Makes ii behave like escape
-inoremap ii <Esc>
+"inoremap ii <Esc>
 
 " Better window navigation
 nnoremap <C-h> <C-w>h

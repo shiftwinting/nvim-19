@@ -12,13 +12,16 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'sheerun/vim-polyglot' 		    "Language pack for syntax highlighting
 let g:polyglot_disabled = ['latex']
 
+" language server thingies
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 Plug 'lervag/vimtex'			        "Latex support
 let g:vimtex_compiler_progname = 'nvr'
 let g:tex_flavor='latex'
 let g:vimtex_view_method='zathura'
 let g:vimtex_quickfix_mode=0
 set conceallevel=2
-let g:tex_conceal='abdmg'
+let g:tex_conceal='abmg'
 let g:vimtex_compiler_latexmk = {
     \ 'build_dir' : 'output',
     \}
@@ -31,10 +34,6 @@ Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
 
 
 " THEMING AND APPERANCE
-Plug 'arcticicestudio/nord-vim'		    "Nord theme
-Plug 'vim-airline/vim-airline'		    "changes the menubar and adds the possibility of more features 
-Plug 'vim-airline/vim-airline-themes'	"themes for the airline menubar
-Plug 'dylanaraps/wal'                   "Pulls the theme data of the wal program and applies it to vim
 Plug 'morhetz/gruvbox'                  "Gruvbox theme, might work better than wal theme
 Plug 'norcalli/nvim-colorizer.lua'      "View hexholors, rgb colors etc. in real time
 Plug 'mhinz/vim-startify'               " Gives vim a startscreen to quickly navigate to recently used files and such
@@ -60,10 +59,11 @@ Plug 'unblevable/quick-scope'           "using this for its horisontal movements
 
 "Plugins for training up my vimspeed
 Plug 'ThePrimeagen/vim-be-good', {'do': './install.sh' }         "to use, enter command VimBeGood
+Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] } "on demand lazy loading
+
 
 "Git integration
 Plug 'tpope/vim-fugitive'
-
 
 
 call plug#end()

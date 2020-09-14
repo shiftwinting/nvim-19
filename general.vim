@@ -1,6 +1,7 @@
 " Defining leader key
 let g:mapleader = "\<Space>"
 
+set hidden
 
 set number relativenumber	"Numbering
 
@@ -17,8 +18,10 @@ set expandtab
 set smarttab
 
 "setting splitbehaviour
-set splitbelow
 set splitright
+set splitbelow
+
+
 
 " TEXT EDITING
 autocmd BufWritePost *.md silent execute "!pandoc % -o %:r.pdf"
