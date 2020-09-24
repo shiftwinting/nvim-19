@@ -29,7 +29,7 @@ set nowrap
 set nolinebreak
 
 
-set clipboard=unnamedplus               " Makes yank and paste use the clipboard by default
+set clipboard+=unnamedplus               " Makes yank and paste use the clipboard by default
 set updatetime=300                      " Faster completion
 set timeoutlen=100                      " By default timeoutlen is 1000 ms
 
