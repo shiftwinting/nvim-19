@@ -20,14 +20,11 @@ source ~/.config/nvim/general/general.vim
 "===========================================
 " Loading plugins and their configurations.
 "===========================================
-source ~/.config/nvim/plug-configs/plugins.vim
+source ~/.config/nvim/plugins.vim
 
 "source ~/.config/nvim/plug-configs/...
 
 
-source ~/.config/nvim/plug-configs/vimsneak.vim
-source ~/.config/nvim/plug-configs/quickscope.vim
-source ~/.config/nvim/plug-configs/vimstartify.vim
 
 "===========================================
 " My 'own' vimscripts

@@ -22,4 +22,13 @@ nnoremap <M-l>    :vertical resize +2<CR>
 "Vim-fugitive gitwraper bindings
 nnoremap <leader>gs :G<CR>
 
+"==============================================
+" Fzf Bindings
+"==============================================
+
+map <C-f> :Files<CR>
+map <leader>b :Buffers<CR>
+nnoremap <leader>g :Rg<CR>
+nnoremap <leader>t :Tags<CR>
+nnoremap <leader>m :Marks<CR>
 

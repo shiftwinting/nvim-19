@@ -1,5 +1,8 @@
 " Defining leader key
-let g:mapleader = "\<Space>"
+let mapleader=" "
+nnoremap <Space> <Nop>
+
+let maplocalleader = " "
 
 " TOOLS
 set number relativenumber	"Numbering
@@ -31,7 +34,6 @@ set nolinebreak
 
 set clipboard+=unnamedplus               " Makes yank and paste use the clipboard by default
 set updatetime=300                      " Faster completion
-set timeoutlen=100                      " By default timeoutlen is 1000 ms
 
 " WINDOW BEHAVIOUR
 set splitright
