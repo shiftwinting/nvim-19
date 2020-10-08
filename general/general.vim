@@ -39,6 +39,9 @@ set updatetime=300                      " Faster completion
 set splitright
 set splitbelow
 
+" BUFFER BEHAVIOUR
+set hidden
+
 
 
 " Turn on some options for when editing markdown files
