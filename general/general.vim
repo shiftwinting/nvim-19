@@ -9,6 +9,8 @@ set number relativenumber	"Numbering
 set ruler
 set mouse=a			"Enabling use of mouse
 
+set hidden
+
 
 " ENCODING
 set encoding=utf-8
