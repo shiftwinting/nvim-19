@@ -46,9 +46,9 @@ set hidden
 
 " Turn on some options for when editing markdown files
 augroup auto_spellcheck
-    autocmd BufNewFile,BufRead *.md setlocal spell wrap linebreak
-    autocmd BufWritePost *.md silent execute "!pandoc % -o %:r.pdf"
-    autocmd BufNewFile,BufRead *.tex setlocal spell wrap linebreak
+    autocmd BufNewFile,BufRead *.md setlocal spell wrap linebreak spelllang=sv
+    "autocmd BufWritePost *.md silent execute \"!pandoc % -o %:r.pdf"
+    autocmd BufNewFile,BufRead *.tex setlocal spell wrap linebreak spelllang=sv
 augroup END
 
 let g:markdown_fenced_languages = ['scala', 'python', 'java']
