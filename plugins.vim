@@ -89,11 +89,6 @@ Plug 'justinmk/vim-sneak'               "Using this for its vertikal movements
 
 Plug 'unblevable/quick-scope'           "using this for its horisontal movements
 
-  let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']       " trigger a highlight in the appropriate direction when pressing these keys:
-  highlight quickscopeprimary guifg='#00c7df' gui=underline ctermfg=155 cterm=underline
-  highlight quickscopesecondary guifg='#afff5f' gui=underline ctermfg=81 cterm=underline
-  let g:qs_max_chars=150
-
 "Git integration
 Plug 'tpope/vim-fugitive'
 
