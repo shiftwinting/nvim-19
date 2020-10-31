@@ -15,7 +15,8 @@ let g:polyglot_disabled = ['latex']
 " language server thingies
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-Plug 'lervag/vimtex'			        "Latex support
+"Latex support
+Plug 'lervag/vimtex'			        
 let g:vimtex_compiler_progname = 'nvr'
 let g:tex_flavor='latex'
 let g:vimtex_view_method='zathura'
@@ -25,6 +26,8 @@ let g:tex_conceal='abmg'
 let g:vimtex_compiler_latexmk = {
     \ 'build_dir' : 'output',
     \}
+
+Plug 'jiangmiao/auto-pairs'
 
 " FILE MANAGEMENT
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -88,6 +91,11 @@ Plug 'justinmk/vim-sneak'               "Using this for its vertikal movements
   highlight sneakscope guifg=red guibg=yellow ctermfg=red ctermbg=yellow
 
 Plug 'unblevable/quick-scope'           "using this for its horisontal movements
+  let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+  highlight QuickScopePrimary guifg='#afff5f' gui=underline ctermfg=155 cterm=underline
+  highlight QuickScopeSecondary guifg='#5fffff' gui=underline ctermfg=81 cterm=underline
+  let g:qs_max_chars=150
+
 
 "Git integration
 Plug 'tpope/vim-fugitive'
