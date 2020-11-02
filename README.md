@@ -10,7 +10,7 @@ The configs should be able to be used on any unix system without to much setup (
 
 ### Realtime notes in latex
 
-I want to create something along the lines of [these blog posts]{https://castel.dev/} but without having to build an entire system around it (meaning I want to keep all the configurations I have to make to my vimsetup).
+I want to create something along the lines of [these blog posts](https://castel.dev/) but without having to build an entire system around it (meaning I want to keep all the configurations I have to make to my vimsetup).
 
 ### Integration with ANKI
 

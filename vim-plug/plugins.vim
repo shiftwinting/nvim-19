@@ -11,7 +11,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Better Syntax Support
     Plug 'sheerun/vim-polyglot'
     let g:polyglot_disabled = ['latex']
+    " For writing documents
     Plug 'lervag/vimtex'
+    Plug 'vim-pandoc/vim-pandoc'
+    Plug 'junegunn/goyo.vim'
     " Auto pairs for '(' '[' '{'
     Plug 'jiangmiao/auto-pairs'
     " Comments out highlighted text
@@ -21,9 +24,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'norcalli/nvim-colorizer.lua'
+    
     "Language Server Thingies
     Plug 'neoclide/coc.nvim', {'branch': 'release'} " Stable version of coc
-    Plug 'honza/vim-snippets'
+    "Plug 'honza/vim-snippets'
 
 
     " FileManagement and searching
