@@ -16,7 +16,6 @@
 source ~/.config/nvim/general/general.vim
 
 
-
 "===========================================
 " Loading plugins and their configurations.
 "===========================================
@@ -46,7 +45,6 @@ source ~/.config/nvim/theming/themes.vim
 "source ~/.config/nvim/keybinds/...
 
 source ~/.config/nvim/keybinds/keybindings.vim
-
 
 
 " A loner config for the colorizer plugin

@@ -1,7 +1,12 @@
 let g:netrw_dirhistmax  =10
+<<<<<<< HEAD
 let g:netrw_dirhistcnt =7
 let g:netrw_dirhist_7='/home/zarathustra/Dropbox/Datateknik-Lund/Year 1/03-Programmering, grundkurs/övningsuppgifter/kap 5 - klasser/up9'
 let g:netrw_dirhist_6='/home/zarathustra/Dropbox/Datateknik-Lund/Year 1/03-Programmering, grundkurs/övningsuppgifter/Sekvenser_kap7/up5'
+=======
+let g:netrw_dirhistcnt =6
+let g:netrw_dirhist_6='/home/zarathustra/Dropbox/budget'
+>>>>>>> 3a2295fcdfb7e4d1b5db81eadf848cd94943c451
 let g:netrw_dirhist_5='/home/zarathustra/Dropbox/Autodidaktik/Programmering/Scala/klasser_egen_inlärning'
 let g:netrw_dirhist_4='/home/zarathustra/Dropbox/Ebooks'
 let g:netrw_dirhist_3='/home/zarathustra/Dropbox/Datateknik-Lund/Year 1/03-Programmering, grundkurs/övningsuppgifter/kap_6_-_Mönster_och_undantag'
