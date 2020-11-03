@@ -16,5 +16,8 @@ let g:airline_theme = 'onedark'
 " Always show tabs
 set showtabline=2
 
+" Readjusts the commandbar height to its default height
+set cmdheight=1
+
 " We don't need to see things like -- INSERT -- anymore
 set noshowmode

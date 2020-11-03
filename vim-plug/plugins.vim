@@ -14,6 +14,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " For writing documents
     Plug 'lervag/vimtex'
     Plug 'vim-pandoc/vim-pandoc'
+    Plug 'vim-pandoc/vim-pandoc-syntax'
     Plug 'junegunn/goyo.vim'
     " Auto pairs for '(' '[' '{'
     Plug 'jiangmiao/auto-pairs'
@@ -27,7 +28,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     
     "Language Server Thingies
     Plug 'neoclide/coc.nvim', {'branch': 'release'} " Stable version of coc
-    "Plug 'honza/vim-snippets'
+    Plug 'honza/vim-snippets'
 
 
     " FileManagement and searching
