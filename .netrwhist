@@ -1,5 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =9
+let g:netrw_dirhistcnt =1
+let g:netrw_dirhist_1='/home/zarathustra/Dropbox/Datateknik-Lund/Year 1/03-Programmering, grundkurs/föreläsningar'
+let g:netrw_dirhist_0='/home/zarathustra/Dropbox/Datateknik-Lund/Year 1/05-Kognition/Texter'
 let g:netrw_dirhist_9='/home/zarathustra/Dropbox/Datateknik-Lund/Year 1/05-Kognition/Föreläsningsanteckningar'
 let g:netrw_dirhist_8='/home/zarathustra/.config/nvim/UltiSnips'
 let g:netrw_dirhist_7='/home/zarathustra/Dropbox/Datateknik-Lund/Year 1/03-Programmering, grundkurs/föreläsningar'
@@ -8,4 +10,3 @@ let g:netrw_dirhist_5='/home/zarathustra/Dropbox/Autodidaktik/Programmering/Scal
 let g:netrw_dirhist_4='/home/zarathustra/Dropbox/Ebooks'
 let g:netrw_dirhist_3='/home/zarathustra/Dropbox/Datateknik-Lund/Year 1/03-Programmering, grundkurs/övningsuppgifter/kap_6_-_Mönster_och_undantag'
 let g:netrw_dirhist_2='/home/zarathustra/Dropbox/Datateknik-Lund/Year 1/03-Programmering, grundkurs/föreläsningar'
-let g:netrw_dirhist_1='/home/zarathustra/Documents/utbildningsplaner etc.'

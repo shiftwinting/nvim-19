@@ -14,10 +14,14 @@ I want to create something along the lines of [these blog posts](https://castel.
 
 ### Integration with ANKI
 
-The flashcards should be editable with neovim
+The anki flashcards should be editable with neovim, 
 
 ## Todo
 
-[] Install and integrate pandoc plugin 
-[] Make configs "smart" such that relevant settings are enabled only when needed
-[] Read documentation on the which-key plugin and create mappings for my latex vision
+- [ ] Install and integrate pandoc plugin 
+- [ ] Make configs "smart" such that relevant settings are enabled only when needed
+- [ ] Read documentation on the which-key plugin and create mappings for my latex vision
+  - [ ] quality of life 
+- [ ] 
+
+
