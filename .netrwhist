@@ -1,4 +1,5 @@
 let g:netrw_dirhistmax  =10
+<<<<<<< HEAD
 let g:netrw_dirhistcnt =3
 let g:netrw_dirhist_3='/home/zarathustra/blog/docs/assets'
 let g:netrw_dirhist_2='/home/zarathustra/blog/docs/assets/css'
@@ -10,3 +11,16 @@ let g:netrw_dirhist_7='/home/zarathustra/Dropbox/Datateknik-Lund/Year 1/03-Progr
 let g:netrw_dirhist_6='/home/zarathustra/Dropbox/Datateknik-Lund/Year 1/03-Programmering, grundkurs/Gammla_Tentor_och_Kontrollskrivningar/Tentor'
 let g:netrw_dirhist_5='/home/zarathustra/Dropbox/Datateknik-Lund/Year 1/03-Programmering, grundkurs/Gammla_Tentor_och_Kontrollskrivningar/Tentor/lösningar'
 let g:netrw_dirhist_4='/home/zarathustra/repos/university-setup'
+=======
+let g:netrw_dirhistcnt =1
+let g:netrw_dirhist_1='/home/zarathustra/Dropbox/Datateknik-Lund/Year 1/03-Programmering, grundkurs/föreläsningar'
+let g:netrw_dirhist_0='/home/zarathustra/Dropbox/Datateknik-Lund/Year 1/05-Kognition/Texter'
+let g:netrw_dirhist_9='/home/zarathustra/Dropbox/Datateknik-Lund/Year 1/05-Kognition/Föreläsningsanteckningar'
+let g:netrw_dirhist_8='/home/zarathustra/.config/nvim/UltiSnips'
+let g:netrw_dirhist_7='/home/zarathustra/Dropbox/Datateknik-Lund/Year 1/03-Programmering, grundkurs/föreläsningar'
+let g:netrw_dirhist_6='/home/zarathustra/Dropbox/budget'
+let g:netrw_dirhist_5='/home/zarathustra/Dropbox/Autodidaktik/Programmering/Scala/klasser_egen_inlärning'
+let g:netrw_dirhist_4='/home/zarathustra/Dropbox/Ebooks'
+let g:netrw_dirhist_3='/home/zarathustra/Dropbox/Datateknik-Lund/Year 1/03-Programmering, grundkurs/övningsuppgifter/kap_6_-_Mönster_och_undantag'
+let g:netrw_dirhist_2='/home/zarathustra/Dropbox/Datateknik-Lund/Year 1/03-Programmering, grundkurs/föreläsningar'
+>>>>>>> 8f542a84c4e5bce4c894fcaaad152236fe58b12b
