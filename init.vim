@@ -1,51 +1,30 @@
-" ------------------------------------------
-"===========================================
-" MY init.vim FILE!
-"===========================================
-" ------------------------------------------
+" General Settings
+source $HOME/.config/nvim/general/settings.vim
+source $HOME/.config/nvim/general/markdown.vim
 
-" Place the cursor on path of a file and press gf (Go to File) to jump to the
-" file. Press Ctrl-o to jump back
+" Pluggins
+source $HOME/.config/nvim/vim-plug/plugins.vim
 
+" Pluggin configs
+source $HOME/.config/nvim/plug-config/vimcommentary.vim
+source $HOME/.config/nvim/plug-config/startscreen.vim
+source $HOME/.config/nvim/plug-config/signify.vim
+source $HOME/.config/nvim/plug-config/sneak.vim
 
-"===========================================
-" General settings
-"===========================================
-"source ~/.config/nvim/general/... 
-
-source ~/.config/nvim/general/general.vim
-
-
-"===========================================
-" Loading plugins and their configurations.
-"===========================================
-source ~/.config/nvim/plugins.vim
-
-"source ~/.config/nvim/plug-configs/...
+"source $HOME/.config/nvim/plug-config/polyglot_syntax.vim
+source $HOME/.config/nvim/plug-config/vimtex.vim
+source $HOME/.config/nvim/plug-config/autopair.vim
 
 
+" Keymapping related
+source $HOME/.config/nvim/keys/mappings.vim
+source $HOME/.config/nvim/keys/which-key.vim
+" Themes
+source $HOME/.config/nvim/themes/onedark.vim
+source $HOME/.config/nvim/themes/airline.vim
 
-"===========================================
-" My 'own' vimscripts
-"===========================================
-"source ~/.config/nvim/scripts/...
+" Language server related
+source $HOME/.config/nvim/plug-config/coc.vim
 
-source ~/.config/nvim/scripts/writingmode.vim
-
-"===========================================
-" Visual apperance
-"===========================================
-"source ~/.config/nvim/theming/...
-
-source ~/.config/nvim/theming/themes.vim
-
-"===========================================
-" Everything keybinding-related
-"===========================================
-"source ~/.config/nvim/keybinds/...
-
-source ~/.config/nvim/keybinds/keybindings.vim
-
-
-" A loner config for the colorizer plugin
-lua require'plug-colorizer'
+" Luafiles
+luafile $HOME/.config/nvim/lua/plug-colorizer.lua
