@@ -27,10 +27,14 @@ set autoindent                          " Good auto indent
 
 set laststatus=2                        " Always display the status line
 set relativenumber number               " Line Numbers
+set signcolumn=yes
 set cursorline                          " Enable highlighting of the current line
 set background=dark                     " tell vim what the background color looks like
 set showtabline=2                       " Always show tabs
+set scrolloff=5                         " keep a minimum  of 5 lines of bellow and above the cursor when possible
 
+" Don't pass messages to |ins-completion-menu|.
+set shortmess+=c
 " Balance between being safe and comfortable
 set noswapfile
 set nobackup                            " This is recommended by coc
@@ -40,7 +44,7 @@ set undofile
 
 set signcolumn=yes                      " Always show the signcolumn, otherwise it would shift the text each time
 set updatetime=300                      " Faster completion
-set timeoutlen=100                      " By default timeoutlen is 1000 ms
+set timeoutlen=300                      " By default timeoutlen is 1000 ms
 set clipboard=unnamedplus               " Copy paste between vim and everything else
 set incsearch
 

@@ -16,6 +16,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   " Quality of life plugins
   Plug 'jiangmiao/auto-pairs'
   Plug 'tpope/vim-commentary'
+  " Better Comments
+  Plug 'tpope/vim-commentary'
   " Menu
   Plug 'mhinz/vim-startify'
   Plug 'liuchengxu/vim-which-key'
@@ -28,4 +30,12 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   " Movement Related
   Plug 'justinmk/vim-sneak'
+  " Icons
+  Plug 'kyazdani42/nvim-web-devicons'
+  Plug 'ryanoasis/vim-devicons'
+  " Functionality
+  Plug 'airblade/vim-rooter'
+  " Knowledge Management
+  Plug 'vimwiki/vimwiki'
+
 call plug#end()

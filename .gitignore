@@ -1,3 +1,6 @@
 plugged/
 .netrwhist
 .metals/
+./undodir/*
+./autoload/
+./undodir/
