@@ -1,26 +1,70 @@
-# My vim config
+# NVCode
 
-This is my vim setup that I use for everything text related. It's currently quite crap but I'm working on that...
+If you are looking for my old configs checkout the two snapshot branches on this repo, there is one for CoC and one for Native LSP
 
-## Vision
+## Install in one command
 
-I want to create an environment were I can do everything from making realtime lecture notes in latex, to general development in several languages. I want the configurations for all these things to only be active when needed (should be doable). 
+**WARNING** Still very experimental will not woek without some configuation
 
-The configs should be able to be used on any unix system without to much setup (at the moment I have to install nvr and such manually. I should be able to automate this with some scripts)
+```bash
+bash <(curl -s https://raw.githubusercontent.com/ChristianChiarulli/nvcode/master/utils/installer/install-nv-code.sh)
+```
 
-### Real-time notes in latex
+After running you will have access to the `nv` command, this WILL NOT overwite your nvim config. So you can have both installed at the same time
 
-I want to create something along the lines of [these blog posts](https://castel.dev/) but without having to build an entire system around it (meaning I want to keep all the configurations I have to make to my vimsetup).
+## Get the latest version of Neovim 
 
-### Integration with ANKI
+```bash
+cd ~
+sudo rm -r neovim
+git clone https://github.com/neovim/neovim
+cd neovim
+sudo make CMAKE_BUILD_TYPE=Release install
+cd ~
+sudo rm -r neovim
+```
 
-The anki flashcards should be editable with neovim, 
+## VSCode support
 
-## Todo
+After installing the Neovim extension in VSCode
 
-- [ ] Install and integrate pandoc plugin 
-- [ ] Make configs "smart" such that relevant settings are enabled only when needed
-- [ ] Read documentation on the which-key plugin and create mappings for my latex vision
-  - [ ] quality of life 
-- [ ] 
+Point the nvim path to your `nvim` binary
 
+Point your `init.vim` path to:
+
+```vim
+$HOME/.config/nvim/lua/nv-vscode/init.vim
+```
+
+or if you are using this config alongside your own:
+
+```vim
+$HOME/.config/nvim/lua/nv-vscode/init.vim
+```
+
+## TODO
+
+**HIGH PRIORITY**
+- formatting using efm server for python
+- formatting using efm server for lua
+- formatting using efm server for prettier/eslint
+- learn what opt is
+- better install script
+- snippet support
+
+**LOW PRIORITY**
+- redo barbar highlight groups
+- more handsome/modern galaxyline
+- make java code actions prettier
+- figure out how to format java
+- setup junit tests for java
+- add lots of lsp
+- configure illuminate according to readme
+- neovim lightbulb config
+- move language servers not installed with npm to neovim local share location
+- better autoimport
+- look into autoinstall lsp
+- get logo
+- configure neogit
+- toggle virtual text diagnostics
+- learn nvim-dap in depth
