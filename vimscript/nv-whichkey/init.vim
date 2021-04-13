@@ -79,6 +79,10 @@ let g:which_key_map.b = {
       \ '?' : ['Buffers'                , 'fzf-buffer'],
       \ }
 
+let g:which_key_map.c = {
+      \ 'name' : '+calendar' ,
+      \ 'o' : [':Calendar'        , 'move next'],
+      \ }
 
 " F is for fold
 let g:which_key_map.F = {

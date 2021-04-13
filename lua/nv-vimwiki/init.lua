@@ -1,7 +1,7 @@
 
 vim.g.vimwiki_list = {
   {
-    path = '~/repos/The-Vault',
+    path = '~/THE_VAULT',
     syntax= 'markdown',
     ext= '.md',
     index= '_index',

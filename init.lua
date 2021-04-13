@@ -1,6 +1,8 @@
   -- General mappings
   require('plugins')
   require('keymappings')
+  require('nv-globals')
+  vim.cmd('luafile ~/.config/nvim/nv-settings.lua')
   require('settings')
   require('colorscheme')
   --require('nv-utils')
@@ -28,6 +30,8 @@
   require('nv-hop')
   require('nv-gitblame')
   require('nv-vimwiki')
+  require('nv-calendar')
+  require('nv-ultisnips')
 
   -- Which Key (Hope to replace with Lua plugin someday)
   vim.cmd('source ~/.config/nvim/vimscript/nv-whichkey/init.vim')
@@ -36,11 +40,21 @@
 
   -- LSP
   require('lsp')
+  require('lsp.scala-ls')
+  -- require('lsp.clangd')
   require('lsp.lua-ls')
-  require('lsp.python-ls')
-  --[[
-  require('lsp.bash-ls')
-  require('lsp.js-ts-ls')
-  require('lsp.json-ls')
-  require('lsp.yaml-ls')
-  --]]
+  --require('lsp.bash-ls')
+  -- require('lsp.js-ts-ls')
+  -- require('lsp.python-ls')
+  -- require('lsp.json-ls')
+  -- require('lsp.yaml-ls')
+  -- require('lsp.vim-ls')
+  -- require('lsp.graphql-ls')
+  -- require('lsp.css-ls')
+  -- require('lsp.docker-ls')
+  -- require('lsp.html-ls')
+  -- require('lsp.efm-general-ls')
+  require('lsp.virtual_text')
+  require('lsp.rust-ls')
+
+  vim.cmd('source ~/.cache/calendar.vim/credentials.vim')

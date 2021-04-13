@@ -1,5 +1,3 @@
-
-
 local execute = vim.api.nvim_command
 local fn = vim.fn
 
@@ -18,8 +16,6 @@ return require('packer').startup(function(use)
   -- Packer can manage itself as an optional plugin
   use {'wbthomason/packer.nvim', opt = true}
 
-  -- Information
-  use 'nanotee/nvim-lua-guide'
 
   -- Quality of life improvements
   use 'norcalli/nvim_utils'
@@ -30,6 +26,8 @@ return require('packer').startup(function(use)
   use 'onsails/lspkind-nvim'
   use 'kosayoda/nvim-lightbulb'
   use 'mfussenegger/nvim-jdtls'
+  use 'scalameta/nvim-metals'
+  use 'kabouzeid/nvim-lspinstall'
 
   -- Debugging
   use 'mfussenegger/nvim-dap'
@@ -38,14 +36,18 @@ return require('packer').startup(function(use)
   use 'hrsh7th/nvim-compe'
   use 'hrsh7th/vim-vsnip'
   use 'hrsh7th/vim-vsnip-integ'
-  use 'honza/vim-snippets'
+  -- use 'honza/vim-snippets'
+  -- use 'nvim-lua/completion-nvim'
   -- use 'epilande/vim-react-snippets'
   -- use 'xabikos/vscode-javascript'
   -- use 'cstrap/python-snippets'
   -- use 'ylcnfrht/vscode-python-snippet-pack'
-  -- use 'golang/vscode-go'
-  -- use 'rust-lang/vscode-rust'
-  -- use 'SirVer/ultisnips'
+  use 'golang/vscode-go'
+  use 'rust-lang/vscode-rust'
+  use 'ChristianChiarulli/html-snippets'
+  use 'ChristianChiarulli/java-snippets'
+  use 'ChristianChiarulli/python-snippets'
+  use 'SirVer/ultisnips'
   -- use 'norcalli/snippets.nvim'
 
 
@@ -83,7 +85,16 @@ return require('packer').startup(function(use)
   use 'tpope/vim-rhubarb'
 
   -- Wiki
- use 'vimwiki/vimwiki'
+  use 'vimwiki/vimwiki'
+
+  -- Going full org mode
+  use 'itchyny/calendar.vim'
+
+  -- writing latex
+  use 'lervag/vimtex'
+
+  -- Registers
+  use 'gennaro-tedesco/nvim-peekup'
 
   -- General Plugins
   use 'windwp/nvim-autopairs'
@@ -96,24 +107,14 @@ return require('packer').startup(function(use)
   use 'psliwka/vim-smoothie'
   use {'iamcco/markdown-preview.nvim', run = 'cd app && npm install' }
   use 'moll/vim-bbye'
-  use 'turbio/bracey.vim'
   use 'AndrewRadev/tagalong.vim'
   use 'alvan/vim-closetag'
-  use { 'glacambre/firenvim', run = function() vim.fn['firenvim#install'](1) end }
   use 'liuchengxu/vim-which-key'
   use 'tpope/vim-sleuth'
   use 'voldikss/vim-floaterm'
   use 'phaazon/hop.nvim'
   use 'liuchengxu/vista.vim'
-  -- use { 'npxbr/glow.nvim', run = ':GlowInstall' }
-  -- figure out how to disable or configure for things with tags like <div></div> because it will highlight all divs
   use 'RRethy/vim-illuminate'
   use 'terrortylor/nvim-comment'
-  -- use 'tpope/vim-commentary'
-  -- use 'suy/vim-context-commentstring'
-  -- use 'b3nj5m1n/kommentary'
-  use 'andymass/vim-matchup'
   use 'junegunn/goyo.vim'
-  use 'bfredl/nvim-miniyank'
-  use 'brooth/far.vim'
 end)

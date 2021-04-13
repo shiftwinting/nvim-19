@@ -36,21 +36,13 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/barbar.nvim"
   },
-  ["bracey.vim"] = {
+  ["calendar.vim"] = {
     loaded = true,
-    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/bracey.vim"
+    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/calendar.vim"
   },
   ["codi.vim"] = {
     loaded = true,
     path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/codi.vim"
-  },
-  ["far.vim"] = {
-    loaded = true,
-    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/far.vim"
-  },
-  firenvim = {
-    loaded = true,
-    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/firenvim"
   },
   ["galaxyline.nvim"] = {
     loaded = true,
@@ -71,6 +63,14 @@ _G.packer_plugins = {
   ["hop.nvim"] = {
     loaded = true,
     path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/hop.nvim"
+  },
+  ["html-snippets"] = {
+    loaded = true,
+    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/html-snippets"
+  },
+  ["java-snippets"] = {
+    loaded = true,
+    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/java-snippets"
   },
   ["lspkind-nvim"] = {
     loaded = true,
@@ -128,13 +128,17 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
   },
-  ["nvim-lua-guide"] = {
+  ["nvim-lspinstall"] = {
     loaded = true,
-    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/nvim-lua-guide"
+    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/nvim-lspinstall"
   },
-  ["nvim-miniyank"] = {
+  ["nvim-metals"] = {
     loaded = true,
-    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/nvim-miniyank"
+    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/nvim-metals"
+  },
+  ["nvim-peekup"] = {
+    loaded = true,
+    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/nvim-peekup"
   },
   ["nvim-tree.lua"] = {
     loaded = true,
@@ -173,6 +177,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/popup.nvim"
   },
+  ["python-snippets"] = {
+    loaded = true,
+    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/python-snippets"
+  },
   ["quick-scope"] = {
     loaded = true,
     path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/quick-scope"
@@ -192,6 +200,10 @@ _G.packer_plugins = {
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/telescope.nvim"
+  },
+  ultisnips = {
+    loaded = true,
+    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/ultisnips"
   },
   ["vim-bbye"] = {
     loaded = true,
@@ -217,10 +229,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/vim-illuminate"
   },
-  ["vim-matchup"] = {
-    loaded = true,
-    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/vim-matchup"
-  },
   ["vim-rhubarb"] = {
     loaded = true,
     path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/vim-rhubarb"
@@ -236,10 +244,6 @@ _G.packer_plugins = {
   ["vim-smoothie"] = {
     loaded = true,
     path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/vim-smoothie"
-  },
-  ["vim-snippets"] = {
-    loaded = true,
-    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/vim-snippets"
   },
   ["vim-startify"] = {
     loaded = true,
@@ -257,6 +261,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/vim-which-key"
   },
+  vimtex = {
+    loaded = true,
+    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/vimtex"
+  },
   vimwiki = {
     loaded = true,
     path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/vimwiki"
@@ -264,6 +272,14 @@ _G.packer_plugins = {
   ["vista.vim"] = {
     loaded = true,
     path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/vista.vim"
+  },
+  ["vscode-go"] = {
+    loaded = true,
+    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/vscode-go"
+  },
+  ["vscode-rust"] = {
+    loaded = true,
+    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/vscode-rust"
   }
 }
 
