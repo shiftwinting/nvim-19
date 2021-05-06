@@ -81,6 +81,10 @@ return require("packer").startup(
 
 		-- Wiki
 		use 'lervag/wiki.vim'
+        use 'SirVer/ultisnips'
+
+		-- Colemak
+		use 'ChrisTheDevel/vim-colemak'
 
         -- Status Line and Bufferline
         use {"glepnir/galaxyline.nvim", opt = true}

@@ -76,11 +76,6 @@ _G.packer_plugins = {
     needs_bufread = false,
     path = "/home/zarathustra/.local/share/nvim/site/pack/packer/opt/barbar.nvim"
   },
-  ["dashboard-nvim"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/opt/dashboard-nvim"
-  },
   ["friendly-snippets"] = {
     loaded = false,
     needs_bufread = false,
@@ -189,6 +184,14 @@ _G.packer_plugins = {
     needs_bufread = false,
     path = "/home/zarathustra/.local/share/nvim/site/pack/packer/opt/telescope.nvim"
   },
+  ultisnips = {
+    loaded = true,
+    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/ultisnips"
+  },
+  ["vim-startify"] = {
+    loaded = true,
+    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/vim-startify"
+  },
   ["vim-vsnip"] = {
     loaded = false,
     needs_bufread = false,
@@ -198,6 +201,10 @@ _G.packer_plugins = {
     loaded = false,
     needs_bufread = false,
     path = "/home/zarathustra/.local/share/nvim/site/pack/packer/opt/which-key.nvim"
+  },
+  ["wiki.vim"] = {
+    loaded = true,
+    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/wiki.vim"
   }
 }
 
