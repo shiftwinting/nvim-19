@@ -80,11 +80,11 @@ return require("packer").startup(
         use {"kyazdani42/nvim-web-devicons", opt = true}
 
 		-- Wiki
-		use 'lervag/wiki.vim'
+	use 'lervag/wiki.vim'
         use 'SirVer/ultisnips'
 
 		-- Colemak
-		use 'ChrisTheDevel/vim-colemak'
+        -- use {'ChrisTheDevel/vim-colemak', opt = true}
 
         -- Status Line and Bufferline
         use {"glepnir/galaxyline.nvim", opt = true}
@@ -113,5 +113,6 @@ return require("packer").startup(
         require_plugin("nvim-web-devicons")
         require_plugin("galaxyline.nvim")
         require_plugin("barbar.nvim")
+	-- require_plugin("vim-colemak")
     end
 )

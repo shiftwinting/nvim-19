@@ -188,6 +188,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/ultisnips"
   },
+  ["vim-colemak"] = {
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/opt/vim-colemak"
+  },
   ["vim-startify"] = {
     loaded = true,
     path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/vim-startify"

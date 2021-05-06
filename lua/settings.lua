@@ -42,3 +42,8 @@ vim.o.clipboard = "unnamedplus" -- Copy paste between vim and everything else
 vim.o.guifont = "FiraCode Nerd Font:h17"
 
 -- vim.o.guifont = "JetBrains\\ Mono\\ Regular\\ Nerd\\ Font\\ Complete"
+
+vim.o.smartcase = true  -- no ignore case when pattern has uppercase
+vim.o.ignorecase = true  -- ignore case in search patterns
+vim.o.incsearch = true  -- highlight match while typing search pattern
+vim.o.hlsearch = true  -- highlight matches with last search pattern
