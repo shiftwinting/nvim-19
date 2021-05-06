@@ -12,6 +12,41 @@ packadd packer.nvim
 try
 
 lua << END
+  local time
+  local profile_info
+  local should_profile = false
+  if should_profile then
+    local hrtime = vim.loop.hrtime
+    profile_info = {}
+    time = function(chunk, start)
+      if start then
+        profile_info[chunk] = hrtime()
+      else
+        profile_info[chunk] = (hrtime() - profile_info[chunk]) / 1e6
+      end
+    end
+  else
+    time = function(chunk, start) end
+  end
+  
+local function save_profiles(threshold)
+  local sorted_times = {}
+  for chunk_name, time_taken in pairs(profile_info) do
+    sorted_times[#sorted_times + 1] = {chunk_name, time_taken}
+  end
+  table.sort(sorted_times, function(a, b) return a[2] > b[2] end)
+  local results = {}
+  for i, elem in ipairs(sorted_times) do
+    if not threshold or threshold and elem[2] > threshold then
+      results[i] = elem[1] .. ' took ' .. elem[2] .. 'ms'
+    end
+  end
+
+  _G._packer = _G._packer or {}
+  _G._packer.profile_output = results
+end
+
+time("Luarocks path setup", true)
 local package_path_str = "/home/zarathustra/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?.lua;/home/zarathustra/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?/init.lua;/home/zarathustra/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?.lua;/home/zarathustra/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?/init.lua"
 local install_cpath_pattern = "/home/zarathustra/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
@@ -22,6 +57,8 @@ if not string.find(package.cpath, install_cpath_pattern, 1, true) then
   package.cpath = package.cpath .. ';' .. install_cpath_pattern
 end
 
+time("Luarocks path setup", false)
+time("try_loadstring definition", true)
 local function try_loadstring(s, component, name)
   local success, result = pcall(loadstring(s))
   if not success then
@@ -31,257 +68,141 @@ local function try_loadstring(s, component, name)
   return result
 end
 
+time("try_loadstring definition", false)
+time("Defining packer_plugins", true)
 _G.packer_plugins = {
   ["barbar.nvim"] = {
-    loaded = true,
-    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/barbar.nvim"
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/opt/barbar.nvim"
   },
-  ["calendar.vim"] = {
-    loaded = true,
-    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/calendar.vim"
+  ["dashboard-nvim"] = {
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/opt/dashboard-nvim"
   },
-  ["codi.vim"] = {
-    loaded = true,
-    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/codi.vim"
+  ["friendly-snippets"] = {
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/opt/friendly-snippets"
   },
   ["galaxyline.nvim"] = {
-    loaded = true,
-    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/galaxyline.nvim"
-  },
-  ["git-blame.nvim"] = {
-    loaded = true,
-    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/git-blame.nvim"
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/opt/galaxyline.nvim"
   },
   ["gitsigns.nvim"] = {
-    loaded = true,
-    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/gitsigns.nvim"
-  },
-  ["goyo.vim"] = {
-    loaded = true,
-    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/goyo.vim"
-  },
-  ["hop.nvim"] = {
-    loaded = true,
-    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/hop.nvim"
-  },
-  ["html-snippets"] = {
-    loaded = true,
-    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/html-snippets"
-  },
-  ["java-snippets"] = {
-    loaded = true,
-    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/java-snippets"
-  },
-  ["lspkind-nvim"] = {
-    loaded = true,
-    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/lspkind-nvim"
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/opt/gitsigns.nvim"
   },
   ["lspsaga.nvim"] = {
-    loaded = true,
-    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/lspsaga.nvim"
-  },
-  ["markdown-preview.nvim"] = {
-    loaded = true,
-    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/markdown-preview.nvim"
-  },
-  neogit = {
-    loaded = true,
-    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/neogit"
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/opt/lspsaga.nvim"
   },
   ["nvcode-color-schemes.vim"] = {
-    loaded = true,
-    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/nvcode-color-schemes.vim"
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/opt/nvcode-color-schemes.vim"
   },
   ["nvim-autopairs"] = {
-    loaded = true,
-    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/nvim-autopairs"
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/opt/nvim-autopairs"
   },
   ["nvim-bqf"] = {
-    loaded = true,
-    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/nvim-bqf"
-  },
-  ["nvim-colorizer.lua"] = {
-    loaded = true,
-    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua"
+    loaded = false,
+    needs_bufread = true,
+    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/opt/nvim-bqf"
   },
   ["nvim-comment"] = {
-    loaded = true,
-    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/nvim-comment"
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/opt/nvim-comment"
   },
   ["nvim-compe"] = {
-    loaded = true,
-    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/nvim-compe"
+    after_files = { "/home/zarathustra/.local/share/nvim/site/pack/packer/opt/nvim-compe/after/plugin/compe_buffer.vim", "/home/zarathustra/.local/share/nvim/site/pack/packer/opt/nvim-compe/after/plugin/compe_calc.vim", "/home/zarathustra/.local/share/nvim/site/pack/packer/opt/nvim-compe/after/plugin/compe_emoji.vim", "/home/zarathustra/.local/share/nvim/site/pack/packer/opt/nvim-compe/after/plugin/compe_luasnip.vim", "/home/zarathustra/.local/share/nvim/site/pack/packer/opt/nvim-compe/after/plugin/compe_nvim_lsp.vim", "/home/zarathustra/.local/share/nvim/site/pack/packer/opt/nvim-compe/after/plugin/compe_nvim_lua.vim", "/home/zarathustra/.local/share/nvim/site/pack/packer/opt/nvim-compe/after/plugin/compe_omni.vim", "/home/zarathustra/.local/share/nvim/site/pack/packer/opt/nvim-compe/after/plugin/compe_path.vim", "/home/zarathustra/.local/share/nvim/site/pack/packer/opt/nvim-compe/after/plugin/compe_snippets_nvim.vim", "/home/zarathustra/.local/share/nvim/site/pack/packer/opt/nvim-compe/after/plugin/compe_spell.vim", "/home/zarathustra/.local/share/nvim/site/pack/packer/opt/nvim-compe/after/plugin/compe_tags.vim", "/home/zarathustra/.local/share/nvim/site/pack/packer/opt/nvim-compe/after/plugin/compe_treesitter.vim", "/home/zarathustra/.local/share/nvim/site/pack/packer/opt/nvim-compe/after/plugin/compe_ultisnips.vim", "/home/zarathustra/.local/share/nvim/site/pack/packer/opt/nvim-compe/after/plugin/compe_vim_lsc.vim", "/home/zarathustra/.local/share/nvim/site/pack/packer/opt/nvim-compe/after/plugin/compe_vim_lsp.vim", "/home/zarathustra/.local/share/nvim/site/pack/packer/opt/nvim-compe/after/plugin/compe_vsnip.vim" },
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/opt/nvim-compe"
   },
   ["nvim-dap"] = {
-    loaded = true,
-    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/nvim-dap"
-  },
-  ["nvim-jdtls"] = {
-    loaded = true,
-    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/nvim-jdtls"
-  },
-  ["nvim-lightbulb"] = {
-    loaded = true,
-    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/nvim-lightbulb"
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/opt/nvim-dap"
   },
   ["nvim-lspconfig"] = {
-    loaded = true,
-    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/opt/nvim-lspconfig"
   },
   ["nvim-lspinstall"] = {
-    loaded = true,
-    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/nvim-lspinstall"
-  },
-  ["nvim-metals"] = {
-    loaded = true,
-    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/nvim-metals"
-  },
-  ["nvim-peekup"] = {
-    loaded = true,
-    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/nvim-peekup"
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/opt/nvim-lspinstall"
   },
   ["nvim-tree.lua"] = {
-    loaded = true,
-    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/nvim-tree.lua"
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/opt/nvim-tree.lua"
   },
   ["nvim-treesitter"] = {
     loaded = true,
     path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
   },
-  ["nvim-ts-rainbow"] = {
-    loaded = true,
-    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/nvim-ts-rainbow"
-  },
-  ["nvim-web-devicons"] = {
-    loaded = true,
-    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
-  },
-  nvim_utils = {
-    loaded = true,
-    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/nvim_utils"
-  },
-  ["packer.nvim"] = {
+  ["nvim-ts-autotag"] = {
     loaded = false,
     needs_bufread = false,
-    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/opt/packer.nvim"
+    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/opt/nvim-ts-autotag"
   },
-  playground = {
+  ["nvim-web-devicons"] = {
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/opt/nvim-web-devicons"
+  },
+  ["packer.nvim"] = {
     loaded = true,
-    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/playground"
+    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/packer.nvim"
   },
   ["plenary.nvim"] = {
-    loaded = true,
-    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/plenary.nvim"
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/opt/plenary.nvim"
   },
   ["popup.nvim"] = {
-    loaded = true,
-    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/popup.nvim"
-  },
-  ["python-snippets"] = {
-    loaded = true,
-    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/python-snippets"
-  },
-  ["quick-scope"] = {
-    loaded = true,
-    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/quick-scope"
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/opt/popup.nvim"
   },
   rnvimr = {
     loaded = true,
     path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/rnvimr"
   },
-  ["tagalong.vim"] = {
-    loaded = true,
-    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/tagalong.vim"
-  },
-  ["telescope-media-files.nvim"] = {
-    loaded = true,
-    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/telescope-media-files.nvim"
+  ["telescope-fzy-native.nvim"] = {
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/opt/telescope-fzy-native.nvim"
   },
   ["telescope.nvim"] = {
-    loaded = true,
-    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/telescope.nvim"
-  },
-  ultisnips = {
-    loaded = true,
-    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/ultisnips"
-  },
-  ["vim-bbye"] = {
-    loaded = true,
-    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/vim-bbye"
-  },
-  ["vim-closetag"] = {
-    loaded = true,
-    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/vim-closetag"
-  },
-  ["vim-devicons"] = {
-    loaded = true,
-    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/vim-devicons"
-  },
-  ["vim-floaterm"] = {
-    loaded = true,
-    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/vim-floaterm"
-  },
-  ["vim-fugitive"] = {
-    loaded = true,
-    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/vim-fugitive"
-  },
-  ["vim-illuminate"] = {
-    loaded = true,
-    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/vim-illuminate"
-  },
-  ["vim-rhubarb"] = {
-    loaded = true,
-    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/vim-rhubarb"
-  },
-  ["vim-rooter"] = {
-    loaded = true,
-    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/vim-rooter"
-  },
-  ["vim-sleuth"] = {
-    loaded = true,
-    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/vim-sleuth"
-  },
-  ["vim-smoothie"] = {
-    loaded = true,
-    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/vim-smoothie"
-  },
-  ["vim-startify"] = {
-    loaded = true,
-    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/vim-startify"
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/opt/telescope.nvim"
   },
   ["vim-vsnip"] = {
-    loaded = true,
-    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/vim-vsnip"
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/opt/vim-vsnip"
   },
-  ["vim-vsnip-integ"] = {
-    loaded = true,
-    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/vim-vsnip-integ"
-  },
-  ["vim-which-key"] = {
-    loaded = true,
-    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/vim-which-key"
-  },
-  vimtex = {
-    loaded = true,
-    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/vimtex"
-  },
-  vimwiki = {
-    loaded = true,
-    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/vimwiki"
-  },
-  ["vista.vim"] = {
-    loaded = true,
-    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/vista.vim"
-  },
-  ["vscode-go"] = {
-    loaded = true,
-    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/vscode-go"
-  },
-  ["vscode-rust"] = {
-    loaded = true,
-    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/vscode-rust"
+  ["which-key.nvim"] = {
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/opt/which-key.nvim"
   }
 }
+
+time("Defining packer_plugins", false)
+if should_profile then save_profiles() end
 
 END
 

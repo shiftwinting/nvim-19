@@ -1,120 +1,113 @@
 local execute = vim.api.nvim_command
 local fn = vim.fn
 
-local install_path = fn.stdpath('data')..'/site/pack/packer/opt/packer.nvim'
+local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 
 if fn.empty(fn.glob(install_path)) > 0 then
-  execute('!git clone https://github.com/wbthomason/packer.nvim '..install_path)
-  execute 'packadd packer.nvim'
+    execute("!git clone https://github.com/wbthomason/packer.nvim " .. install_path)
+    execute "packadd packer.nvim"
 end
 
-vim.cmd [[packadd packer.nvim]]
+--- Check if a file or directory exists in this path
+local function require_plugin(plugin)
+    local plugin_prefix = fn.stdpath("data") .. "/site/pack/packer/opt/"
 
-vim.cmd 'autocmd BufWritePost plugins.lua PackerCompile' -- Auto compile when there are changes in plugins.lua
+    local plugin_path = plugin_prefix .. plugin .. "/"
+    --	print('test '..plugin_path)
+    local ok, err, code = os.rename(plugin_path, plugin_path)
+    if not ok then
+        if code == 13 then
+            -- Permission denied, but it exists
+            return true
+        end
+    end
+    --	print(ok, err, code)
+    if ok then
+        vim.cmd("packadd " .. plugin)
+    end
+    return ok, err, code
+end
 
-return require('packer').startup(function(use)
-  -- Packer can manage itself as an optional plugin
-  use {'wbthomason/packer.nvim', opt = true}
+vim.cmd "autocmd BufWritePost plugins.lua PackerCompile" -- Auto compile when there are changes in plugins.lua
 
+return require("packer").startup(
+    function(use)
+        -- Packer can manage itself as an optional plugin
+        use "wbthomason/packer.nvim"
 
-  -- Quality of life improvements
-  use 'norcalli/nvim_utils'
+        -- TODO refactor all of this (for now it works, but yes I know it could be wrapped in a simpler function)
+        use {"neovim/nvim-lspconfig", opt = true}
+        use {"glepnir/lspsaga.nvim", opt = true}
+        use {"kabouzeid/nvim-lspinstall", opt = true}
 
-  -- LSP
-  use 'neovim/nvim-lspconfig'
-  use 'glepnir/lspsaga.nvim'
-  use 'onsails/lspkind-nvim'
-  use 'kosayoda/nvim-lightbulb'
-  use 'mfussenegger/nvim-jdtls'
-  use 'scalameta/nvim-metals'
-  use 'kabouzeid/nvim-lspinstall'
+        -- Telescope
+        use {"nvim-lua/popup.nvim", opt = true}
+        use {"nvim-lua/plenary.nvim", opt = true}
+        use {"nvim-telescope/telescope.nvim", opt = true}
+        use {"nvim-telescope/telescope-fzy-native.nvim", opt = true}
 
-  -- Debugging
-  use 'mfussenegger/nvim-dap'
+        -- Debugging
+        use {"mfussenegger/nvim-dap", opt = true}
 
-  -- Autocomplete
-  use 'hrsh7th/nvim-compe'
-  use 'hrsh7th/vim-vsnip'
-  use 'hrsh7th/vim-vsnip-integ'
-  -- use 'honza/vim-snippets'
-  -- use 'nvim-lua/completion-nvim'
-  -- use 'epilande/vim-react-snippets'
-  -- use 'xabikos/vscode-javascript'
-  -- use 'cstrap/python-snippets'
-  -- use 'ylcnfrht/vscode-python-snippet-pack'
-  use 'golang/vscode-go'
-  use 'rust-lang/vscode-rust'
-  use 'ChristianChiarulli/html-snippets'
-  use 'ChristianChiarulli/java-snippets'
-  use 'ChristianChiarulli/python-snippets'
-  use 'SirVer/ultisnips'
-  -- use 'norcalli/snippets.nvim'
+        -- Autocomplete
+        use {"hrsh7th/nvim-compe", opt = true}
+        use {"hrsh7th/vim-vsnip", opt = true}
+        use {"rafamadriz/friendly-snippets", opt = true}
 
+        -- Treesitter
+        use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
+        use {"windwp/nvim-ts-autotag", opt = true}
 
-  -- Treesitter
-  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-  use 'nvim-treesitter/playground'
-  use 'p00f/nvim-ts-rainbow'
+        -- Explorer
+        use {"kyazdani42/nvim-tree.lua", opt = true}
+        -- TODO remove when open on dir is supported by nvimtree
+        use "kevinhwang91/rnvimr"
 
-  -- Icons
-  use 'kyazdani42/nvim-web-devicons'
-  use 'ryanoasis/vim-devicons'
+        -- use {'lukas-reineke/indent-blankline.nvim', opt=true, branch = 'lua'}
+        use {"lewis6991/gitsigns.nvim", opt = true}
+        -- use {"liuchengxu/vim-which-key", opt = true}
+        use {"folke/which-key.nvim", opt = true}
+        -- use {"ChristianChiarulli/dashboard-nvim", opt = true}
+        use 'mhinz/vim-startify'
+        use {"windwp/nvim-autopairs", opt = true}
+        use {"terrortylor/nvim-comment", opt = true}
+        use {"kevinhwang91/nvim-bqf", opt = true}
 
-  -- Status Line and Bufferline
-  use 'glepnir/galaxyline.nvim' -- Bufferline enchancer
-  use 'romgrk/barbar.nvim' --Tabline enhancer
+        -- Color
+        use {"christianchiarulli/nvcode-color-schemes.vim", opt = true}
 
-  -- Telescope
-  use 'nvim-lua/popup.nvim'
-  use 'nvim-lua/plenary.nvim'
-  use 'nvim-telescope/telescope.nvim'
-  use 'nvim-telescope/telescope-media-files.nvim'
+        -- Icons
+        use {"kyazdani42/nvim-web-devicons", opt = true}
 
-  -- Explorer
-  use 'kyazdani42/nvim-tree.lua'
+		-- Wiki
+		use 'lervag/wiki.vim'
 
-  -- Color
-  use 'christianchiarulli/nvcode-color-schemes.vim'
-  use 'norcalli/nvim-colorizer.lua'
+        -- Status Line and Bufferline
+        use {"glepnir/galaxyline.nvim", opt = true}
+        use {"romgrk/barbar.nvim", opt = true}
 
-  -- Git
-  use 'TimUntersberger/neogit'
-  use {'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } }
-  use 'f-person/git-blame.nvim'
-  use 'tpope/vim-fugitive'
-  use 'tpope/vim-rhubarb'
-
-  -- Wiki
-  use 'vimwiki/vimwiki'
-
-  -- Going full org mode
-  use 'itchyny/calendar.vim'
-
-  -- writing latex
-  use 'lervag/vimtex'
-
-  -- Registers
-  use 'gennaro-tedesco/nvim-peekup'
-
-  -- General Plugins
-  use 'windwp/nvim-autopairs'
-  use 'kevinhwang91/nvim-bqf'
-  use 'unblevable/quick-scope'
-  use 'airblade/vim-rooter'
-  use 'kevinhwang91/rnvimr'
-  use 'mhinz/vim-startify'
-  use 'metakirby5/codi.vim'
-  use 'psliwka/vim-smoothie'
-  use {'iamcco/markdown-preview.nvim', run = 'cd app && npm install' }
-  use 'moll/vim-bbye'
-  use 'AndrewRadev/tagalong.vim'
-  use 'alvan/vim-closetag'
-  use 'liuchengxu/vim-which-key'
-  use 'tpope/vim-sleuth'
-  use 'voldikss/vim-floaterm'
-  use 'phaazon/hop.nvim'
-  use 'liuchengxu/vista.vim'
-  use 'RRethy/vim-illuminate'
-  use 'terrortylor/nvim-comment'
-  use 'junegunn/goyo.vim'
-end)
+        require_plugin("nvim-lspconfig")
+        require_plugin("lspsaga.nvim")
+        require_plugin("nvim-lspinstall")
+        require_plugin("friendly-snippets")
+        require_plugin("popup.nvim")
+        require_plugin("plenary.nvim")
+        require_plugin("telescope.nvim")
+        require_plugin("nvim-dap")
+        require_plugin("nvim-compe")
+        require_plugin("vim-vsnip")
+        require_plugin("nvim-treesitter")
+        require_plugin("nvim-ts-autotag")
+        require_plugin("nvim-tree.lua")
+        require_plugin("gitsigns.nvim")
+        require_plugin("which-key.nvim")
+        -- require_plugin("dashboard-nvim")
+        require_plugin("nvim-autopairs")
+        require_plugin("nvim-comment")
+        require_plugin("nvim-bqf")
+        require_plugin("nvcode-color-schemes.vim")
+        require_plugin("nvim-web-devicons")
+        require_plugin("galaxyline.nvim")
+        require_plugin("barbar.nvim")
+    end
+)
