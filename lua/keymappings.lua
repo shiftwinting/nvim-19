@@ -22,5 +22,5 @@ remap('x', 'K', ':move \'<-2<CR>gv-gv', {noremap = true, silent = true})
 remap('x', 'J', ':move \'>+1<CR>gv-gv', {noremap = true, silent = true})
 
 -- Better nav for omnicomplete
-vim.cmd('inoremap <expr> <c-j> (\"\\<C-n>\")')
-vim.cmd('inoremap <expr> <c-k> (\"\\<C-p>\")')
+vim.cmd('inoremap <expr> <c-e> (\"\\<C-n>\")')
+vim.cmd('inoremap <expr> <c-i> (\"\\<C-p>\")')

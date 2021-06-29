@@ -36,15 +36,11 @@ utils.define_augroups({
         -- {'User', 'GoyoLeave', 'lua require(\'galaxyline\').disable_galaxyline()'},
         -- {'User', 'GoyoEnter', 'lua require(\'galaxyline\').galaxyline_augroup()'},
     },
-    _java = {
-        {'FileType', 'java', 'luafile ~/.config/nvim/lua/lsp/java-ls.lua'},
-        {'FileType', 'java', 'nnoremap ca <Cmd>lua require(\'jdtls\').code_action()<CR>'}
-    },
-    _markdown = {{'FileType', 'markdown', 'setlocal wrap'}, {'FileType', 'markdown', 'setlocal spell spelllang=sv,en'}},
-    _solidity = {
-        {'BufWinEnter', '.sol', 'setlocal filetype=solidity'}, {'BufRead', '*.sol', 'setlocal filetype=solidity'},
-        {'BufNewFile', '*.sol', 'setlocal filetype=solidity'}
-    },
+    -- _markdown = {{'FileType', 'markdown', 'setlocal wrap'}},
+    _markdown = {
+		{'FileType', 'markdown', 'setlocal wrap linebreak'}, {'FileType', 'markdown', 'setlocal spell spelllang=sv,en'},
+		{'FileType', 'markdown', 'nmap <buffer><silent> <leader>p :call mdip#MarkdownClipboardImage()<CR>'}
+	},
     _gemini = {
         {'BufWinEnter', '.gmi', 'setlocal filetype=markdown'}, {'BufRead', '*.gmi', 'setlocal filetype=markdown'},
         {'BufNewFile', '*.gmi', 'setlocal filetype=markdown'}

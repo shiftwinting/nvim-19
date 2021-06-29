@@ -1,3 +1,7 @@
+snippet date "YYYY-MM-DD" w
+`!v strftime("%Y-%m-%d")`
+endsnippet
+
 # ====== Code blocks ======
 
 snippet scalablock "Insert scala codeblock" b
@@ -33,11 +37,24 @@ endsnippet
 
 # ====== flashcard =======
 
-snippet flashcard "Obsidan_to_anki template" b
-
+snippet flashcard "flashcard" b
 <!--=================Start of new flashcard=================-->
 START
 Basic
+$1
+
+<!--=========================Answer=========================-->
+Back: 
+$0
+
+END
+<!--====================End of flashcard====================-->
+endsnippet
+
+snippet flashcard-c "cloze flashcard" b
+<!--=================Start of new flashcard=================-->
+START
+cloze
 $1
 
 <!--=========================Answer=========================-->

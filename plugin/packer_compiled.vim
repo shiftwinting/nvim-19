@@ -96,6 +96,10 @@ _G.packer_plugins = {
     needs_bufread = false,
     path = "/home/zarathustra/.local/share/nvim/site/pack/packer/opt/lspsaga.nvim"
   },
+  ["md-img-paste.vim"] = {
+    loaded = true,
+    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/md-img-paste.vim"
+  },
   ["nvcode-color-schemes.vim"] = {
     loaded = false,
     needs_bufread = false,
@@ -117,7 +121,7 @@ _G.packer_plugins = {
     path = "/home/zarathustra/.local/share/nvim/site/pack/packer/opt/nvim-comment"
   },
   ["nvim-compe"] = {
-    after_files = { "/home/zarathustra/.local/share/nvim/site/pack/packer/opt/nvim-compe/after/plugin/compe_buffer.vim", "/home/zarathustra/.local/share/nvim/site/pack/packer/opt/nvim-compe/after/plugin/compe_calc.vim", "/home/zarathustra/.local/share/nvim/site/pack/packer/opt/nvim-compe/after/plugin/compe_emoji.vim", "/home/zarathustra/.local/share/nvim/site/pack/packer/opt/nvim-compe/after/plugin/compe_luasnip.vim", "/home/zarathustra/.local/share/nvim/site/pack/packer/opt/nvim-compe/after/plugin/compe_nvim_lsp.vim", "/home/zarathustra/.local/share/nvim/site/pack/packer/opt/nvim-compe/after/plugin/compe_nvim_lua.vim", "/home/zarathustra/.local/share/nvim/site/pack/packer/opt/nvim-compe/after/plugin/compe_omni.vim", "/home/zarathustra/.local/share/nvim/site/pack/packer/opt/nvim-compe/after/plugin/compe_path.vim", "/home/zarathustra/.local/share/nvim/site/pack/packer/opt/nvim-compe/after/plugin/compe_snippets_nvim.vim", "/home/zarathustra/.local/share/nvim/site/pack/packer/opt/nvim-compe/after/plugin/compe_spell.vim", "/home/zarathustra/.local/share/nvim/site/pack/packer/opt/nvim-compe/after/plugin/compe_tags.vim", "/home/zarathustra/.local/share/nvim/site/pack/packer/opt/nvim-compe/after/plugin/compe_treesitter.vim", "/home/zarathustra/.local/share/nvim/site/pack/packer/opt/nvim-compe/after/plugin/compe_ultisnips.vim", "/home/zarathustra/.local/share/nvim/site/pack/packer/opt/nvim-compe/after/plugin/compe_vim_lsc.vim", "/home/zarathustra/.local/share/nvim/site/pack/packer/opt/nvim-compe/after/plugin/compe_vim_lsp.vim", "/home/zarathustra/.local/share/nvim/site/pack/packer/opt/nvim-compe/after/plugin/compe_vsnip.vim" },
+    after_files = { "/home/zarathustra/.local/share/nvim/site/pack/packer/opt/nvim-compe/after/plugin/compe.vim" },
     loaded = false,
     needs_bufread = false,
     path = "/home/zarathustra/.local/share/nvim/site/pack/packer/opt/nvim-compe"
@@ -201,6 +205,10 @@ _G.packer_plugins = {
     loaded = false,
     needs_bufread = false,
     path = "/home/zarathustra/.local/share/nvim/site/pack/packer/opt/vim-vsnip"
+  },
+  vimtex = {
+    loaded = true,
+    path = "/home/zarathustra/.local/share/nvim/site/pack/packer/start/vimtex"
   },
   ["which-key.nvim"] = {
     loaded = false,
